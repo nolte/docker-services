@@ -1,0 +1,12 @@
+FROM logstash:latest
+
+RUN logstash-plugin install logstash-input-redis
+RUN logstash-plugin install logstash-output-elasticsearch
+RUN logstash-plugin install logstash-output-influxdb
+RUN logstash-plugin install logstash-output-graphite    	
+
+RUN logstash-plugin install logstash-codec-multiline
+RUN logstash-plugin install logstash-filter-grok
+RUN logstash-plugin install logstash-filter-multiline
+
+
